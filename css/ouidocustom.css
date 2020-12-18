@@ -3,6 +3,19 @@ body {
     font-size: 22px;
 }
 
+/* sizing for small screens */
+@media (max-width: 1200px) {
+    body{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        font-size: 14px;
+    }
+}
+
 h1 {
     font-family: "Montserrat";
     font-weight: 600;
@@ -26,6 +39,36 @@ h4 {
     font-size: 1.8rem;
 }
 
+/* sizing for small screens */
+@media (max-width: 1200px) {
+    h1{
+        font-size: 1.8rem;
+    }
+    h2 {
+        font-size: 1.4rem;
+    }
+    h3 {
+        font-size: 1.2rem;
+    }
+    h4 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    h1{
+        font-size: 1.4rem;
+    }
+    h2 {
+        font-size: 1.2rem;
+    }
+    h3 {
+        font-size: 1.1rem;
+    }
+    h4 {
+        font-size: 1rem;
+    }
+}
 
 .mainnav {
     height: 60px;
@@ -158,6 +201,7 @@ h4 {
 .cta {
     display: inline-block;
     width: auto;
+    min-width: 75px;
     border-radius: 13px;
     padding: 13px;
     margin-top: 30px;
@@ -219,6 +263,18 @@ h4 {
     font-size: 1.1rem;
 }
 
+@media (max-width: 1200px) {
+    .section p, .section-full p, .section-left p, .section-right p{
+        font-size: .8rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .section p, .section-full p, .section-left p, .section-right p{
+        font-size: .7rem;
+    }
+}
+
 .section .cta{
     margin-top: 16px;
     margin-bottom: 16px;
@@ -266,8 +322,9 @@ h4 {
     float: left;
     width: 100%;
     padding: 100px;
-
 }
+
+
 
 .section-left {
     padding-left: 100px;
@@ -281,6 +338,30 @@ h4 {
     padding-right: 50px;
     padding-left: 50px;
 }
+
+@media (max-width: 1200px) {
+    .section, .section-full, .section-left, .section-right{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .section li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .section, .section-full,  .section-left,  .section-right{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .section li {
+        font-size: .8rem;
+    }
+}
+
+
 
 .subsection{
     padding-top: 10px;
@@ -307,13 +388,13 @@ h4 {
 /* sizing for small screens */
 @media (max-width: 1200px) {
     .section4{
-        font-size: .8rem
+        font-size: .8rem;
     }
 }
 
 @media (max-width: 800px) {
     .section4{
-        font-size: .6rem
+        font-size: .6rem;
     }
 }
 
@@ -333,7 +414,7 @@ h4 {
 
 }
 
-bk-trans{
+.bk-trans{
     color: inherit;
 }
 .bk-red {
@@ -532,6 +613,24 @@ footer p {
     font-size: 1.25rem;
     font-weight: 400;
 }
+/* sizing for small screens */
+@media (max-width: 1200px) {
+    .solution-name{
+        font-size: 1rem;
+    }
+    .solution-name:hover{
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .solution-name{
+        font-size: .8rem;
+    }
+    .solution-name:hover{
+        font-size: 1.0rem;
+    }
+}
 
 .solution-name:hover{
     font-size: 1.35rem;
@@ -606,6 +705,23 @@ footer p {
     font-size: 1.85rem;
 }
 
+/* sizing for small screens */
+@media (max-width: 1200px) {
+    .callout {
+        margin: 25px;
+        padding: 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .callout{
+        margin: 10px;
+        padding: 10px;
+        font-size: .8rem;
+    }
+}
+
 .row {
     margin: 0px;
 
@@ -632,6 +748,33 @@ footer p {
     height:44vh;
     overflow-y: auto;
     padding: 0px;
+}
+
+/* sizing for small screens */
+@media (max-width: 1200px) {
+    .response-container{
+        height: 40vh;
+        font-size: 1rem;
+    }
+    .callout h3 {
+        font-size: 1.3rem;
+    }
+    .response-container h4{
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .response-container{
+        height: 40vh;
+        font-size: .8rem;
+    }
+    .callout h3 {
+        font-size: 1.1rem;
+    }
+    .response-container h4{
+        font-size: 1.1rem;
+    }
 }
 
 .response p{
