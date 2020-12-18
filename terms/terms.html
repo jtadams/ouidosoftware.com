@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ouido Software</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/ouidoBS.css">
+    <link rel="stylesheet" href="../css/ouidocustom.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Bootstrap core JS-->
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../js/scripts.js"></script>
+    <!-- tippy -->
+    <script src="../js/tippy.all.min.js"></script>
+
+    <!-- ouido js -->
+    <script src="../js/ambassadors.js"></script>
+    <script src="../js/codemanager.js"></script>
+    <style>
+
+
+    </style>
+
+</head>
+<body>
+<div id="home"></div>
+
+
+<nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand js-scroll-trigger" href="#home"><img src="../images/OuidoSoftware1Trans.png" width="125px"></a>
+        <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu <i class="fas fa-bars"></i></button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html#features">Features</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html#plans">Plans</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../index.html#FAQ">FAQ</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="../demo.html">Demos</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger subscribebtn" data-prod="0" href="#signup">Sign up</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="https://app.ouidosoftware.com">Login</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <!-- placeholder for discount code if passed in -->
+    <div style="visibility: hidden">
+        <span class="discountcode" id="discountcode"></span>
+    </div>
+
+    <div class="sticky text-right" data-prod="0" id="stickybutton" style="display: none; z-index: 10;">
+        <div class="imagebutton imagebutton-red subscribebtn"><span class="mtext">Subscribe Now</span></div>
+    </div>
+
+
+
+<div class="container" >
+
+</div>
+
+<footer class="footer bg-gradient-dark" id="footer">
+    <div class="copyrights">
+        <div class="container">
+            <div class="footer-distributed">
+                <div class="footer-left">
+                    <p class="footer-company-name text-right mr-n5">All Rights Reserved. &copy; 2020, Ouido Software</p>
+                </div>
+            </div>
+        </div><!-- end container -->
+    </div><!-- end copyrights -->
+</footer>
+
+<script>
+$(document).ready(function(){
+
+
+    $('.subscribebtn').click(function(){
+       let url = '../subscribenow.html?ref=' + $('#discountcode').val();
+       location.href = url;
+    });
+
+
+    $(function(){
+        $.get("blogist.html", function(data, status){
+            $('bloglist').html(data);
+        });
+
+    });
+
+
+    $(document).on('click', '.viewarticle', function(){
+        let file = $(this).data('url');
+        $.get(file, function(data){
+            $('#viewer').html(data);
+        });
+
+    });
+
+    $(document).on('scroll', function(){
+        let elem1 = $('#jumbobutton1');
+        if (isScrolledIntoView(elem1) ) {
+            $('#stickybutton').hide();
+        } else {
+            $('#stickybutton').show();
+        }
+    });
+
+
+
+    $('.nav-link, .navbar-brand, .internal-link').click(function() {
+        var sectionTo = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(sectionTo).offset().top
+        }, 500);
+    });
+
+    let html = $('#jumbobutton1').html();
+    $('#stickybutton').html(html);
+
+
+
+});
+function isScrolledIntoView(elem)
+{
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top ;
+    var elemBottom = elemTop + $(elem).height();
+
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+}
+
+</script>
+
+
+</body>
+</html>
