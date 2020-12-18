@@ -1,0 +1,100 @@
+   <nav class="navbar navbar-expand-lg fixed-top mainnav" id="mainNav">
+        <a class="navbar-brand js-scroll-trigger" href="#home"><img id="logoimage" src="images/OuidoLogotransparent-white.png" width="125px"></a>
+
+        <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-1 px-0 px-2 rounded" href="#home">Home</a></li>
+                <li class="nav-item mx-0 mx-lg-1">
+                        <a class="nav-link py-1 px-0 px-2 rounded refbtn" href="solutions.html" id="navbarDropdownMenuLink">Solutions</a>
+                </li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-1 px-0 px-2 rounded refbtn newtab" href="ouidoacademy/academyhome.html">Training</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-1 px-0 px-2 rounded refbtn" href="aboutus.html">About Us</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-1 px-0 px-2 rounded refbtn" href="testimonials.html">Testimonials</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-1 px-0 px-2 rounded refbtn" href="faq.html">FAQ</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-1 px-0 px-2 rounded subscribebtn refbtn" href="subscribenow.html" data-prod="0">Sign up</a></li>
+                <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-1 px-0 px-2 rounded" href="https://app.ouidosoftware.com">Login</a></li>
+            </ul>
+        </div>
+
+    </nav>
+
+   <script>
+
+       $(document).on('click', '.nav-link, .navbar-brand, .ouidoscroller, .ouidoscroller1', function() {
+           if ($(this).hasClass('subscribebtn') || $(this).hasClass('refbtn')){
+               return;
+           }
+           let href = window.location.href;
+
+           let cpath= window.location.pathname;
+           let academy=false;
+
+           if( cpath.toString().includes('academy')){
+               academy=true;
+           }
+
+           let index = false;
+           let ref = $('#discountcode').val();
+
+           if (href.toString().includes('index.html')){
+               index = true
+           }
+           let sectionTo = $(this).attr('href');
+           let target = '';
+
+           if (!index){
+               // we're on the index page - if it's an anchor e.g. #benefits scroll to it
+               target = 'index.html';
+           }
+
+           if (typeof(sectionTo) != "undefined") {
+               if(sectionTo != "#") {
+                   target += sectionTo;
+               }
+           } else {
+               target = $(this).data('path');
+           }
+
+           if (academy){
+               target = '../'+target;
+           }
+
+           if (index){
+               if (!target.includes('html')){
+                   $('html, body').animate({
+                       scrollTop: $(target).offset().top
+                   }, 800);
+               } else {
+                   let newtarget = target +"?ref="+ref;
+                   //alert(newtarget);
+                   window.location.href=newtarget;
+               }
+
+           } else {
+
+               if (ref !='' ){
+                   if (target.includes("#")){
+                       target = target.replace('#', '?ref='+ref+'#')
+                   } else {
+                       target = target + '?ref='+ref;
+                   }
+               }
+               window.location.href=target;
+
+           }
+
+       });
+
+
+       let cpath = window.location.pathname;
+       if( cpath.toString().includes('academy')){
+           $('#logoimage').attr('src', '../'+ $('#logoimage').attr('src'));
+       }
+
+   </script>

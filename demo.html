@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ouido Software</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <!-- ouido js -->
+    <script src="js/ambassadors.js"></script>
+    <script src="js/codemanager.js"></script>
+    <link rel="stylesheet" href="css/ouidocustom.css">
+
+</head>
+<body class="bk-purple">
+<div class="ouidocontainer" id="topnav">
+</div>
+
+<div id="discountbadge"></div>
+
+<!-- placeholder for discount code if passed in -->
+
+<div style="display: none;">
+    <span class="discountcode" id="discountcode"></span>
+</div>
+
+
+<div class="row" id="overview">
+    <div class="section section-full bk-trans">
+        <h2>Introducing the Ouido Virtual Assistant</h2>
+        <h4>a quick introduction demo that demonstrates the power of Ouido</h4>
+        <div class="center section section-full">
+            <!--
+            <h1>We are currently creating a new cemo video will be available shortly.</h1>
+            <h4>Thanks for your patience.</h4>
+            -->
+
+            <div class="iframe-container" style="height: 35vh;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/ZuIY2V_A0XM?rel=0"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        iv_load_policy="1" modestbranding="1" allowfullscreen></iframe>
+                <!--
+                <iframe width="560" height="315" src="https://youtu.be/embed/ZuIY2V_A0XM?rel=0"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        iv_load_policy="1" modestbranding="1" allowfullscreen>
+                </iframe>
+                -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer class="footer bk-black" id="footer">
+</footer>
+
+<script>
+    $(document).ready(function(){
+        $('#topnav').load('topmenu.html');
+        $('#footer').load('footer.html');
+        $('#discountbadge').load('badge.html');
+
+
+    });
+
+</script>
+
+</body>
+</html>

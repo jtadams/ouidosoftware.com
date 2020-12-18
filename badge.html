@@ -1,0 +1,63 @@
+
+<div class="discount ouidobadge refbtn" data-path="subscribenow.html">
+    <p style="text-align: center; align-self: center; padding-top: 40px; padding-left: 40px; width: 75%;">
+        <span id="dealdescription"></span>
+        with deal code: <span id="dcode"></span>
+    </p>
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+    $(function(){
+        let code = $('.discountcode').val();
+        let amblist = getAmbassadorList();
+        let b1 ="";
+        let b2 ="";
+        let p1 ="";
+        let p2 ="";
+        let dealdesc = "";
+
+        $('.discount').hide();
+
+        if (code !== "" && code !=='OUIDO!' && amblist.includes(code)){
+            // get deal prices
+            $.getJSON("/deals.json", function (deals) {
+                $(deals).each(function (i, deal) {
+                    if (deal.Code === code){
+                        p1=deal.ProM;
+                        p2=deal.ProA;
+                        dealdesc = deal.Desc;
+
+                        $('#proA').html(p2);
+                        $('#proM').html(p1);
+
+                        if (p1.length > 0){
+                            $('.regularprice').hide();
+                            $('.discount').show();
+                            let linkref = 'http://ouidosoftware.com/subscribenow.html?ref=' + $('#discountcode').val() ;
+                            $('#sharelinkref').attr('href', linkref );
+                            $('#sharelink').html(linkref);
+                        }
+
+                        if (dealdesc.length > 0){
+                            $('#dealdescription').html(dealdesc);
+                            $('.dealdescription').show();
+                        }
+
+
+                    }
+                });
+            });
+
+            $('.discountheader').show();
+            $('#dcode').text($('.discountcode').val());
+        }
+
+    });
+
+
+});
+
+</script>

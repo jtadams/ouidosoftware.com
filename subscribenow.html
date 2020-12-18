@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ouido Software</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <!-- ouido js -->
+    <script src="js/ambassadors.js"></script>
+    <script src="js/codemanager.js"></script>
+    <link rel="stylesheet" href="css/ouidocustom.css">
+
+</head>
+<body>
+<div class="ouidocontainer" id="topnav">
+</div>
+
+    <!-- placeholder for discount code if passed in -->
+    <div style="display: none">
+        <span class="discountcode" id="discountcode"></span>
+    </div>
+
+<div id="discountbadge"></div>
+
+<!-- Features Section -->
+
+        <div class="row" id="home">
+            <div class="section section-full" style="padding-bottom: 0px; margin-bottom: 0px;">
+                <h4>First 30 days FREE!</h4>
+                <h2>Choose your plan</h2>
+            </div>
+
+            <div class="section section-left subsection bk-white" >
+                <div class="feature-card">
+                    <div class="feature-name">Pro - Yearly</div>
+                    <div class="feature-desc">
+                        <strong>Our Best Deal, Unlimited everything!</strong>
+                        <p class="card-text">Unlimited access to all the features including task and date reminders, recurring templates,
+                            reports, and unlimited deals.  Add team members for $659.45/year.
+                            <br>&nbsp;
+                        </p>
+                    </div>
+                    <div class="regularprice">
+                        <div class="row">
+                            <div class="col-12">
+                                <strong>your price</strong> <span class="adprice">$879.45/year</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discount" style="display:none;">
+                        <div class="row">
+                            <div class="col-12">
+                                Regularly <span class="oldprice">$879.45/year</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <strong>your price</strong> <span class="adprice"><span id="proA">$791.50</span>/year</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <div class="float-right">
+                                <a href="#" class="btn btn-primary buybtn" id="4">Choose Pro Yearly</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section section-right subsection bk-white">
+                <div class="feature-card">
+                    <div class="feature-name">Pro - Month to Month</div>
+                    <div class="feature-desc">
+                        <strong>Unlimited access to features, Cancel Anytime</strong>
+                        <p class="card-text">Unlimited access to all the features including task and date reminders, recurring templates,
+                            reports, and unlimited deals.  Add team members for $59.95/month.
+                            <br><br>
+                        </p>
+                    </div>
+                    <div class="regularprice">
+                        <div class="row">
+                            <div class="col-12">
+                                <strong>your price</strong> <span class="adprice">$79.95/month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discount" style="display:none;">
+                        <div class="row">
+                            <div class="col-12">
+                                Regularly <span class="oldprice">$79.95/month</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <strong>your price</strong> <span class="adprice"><span id="proM">$71.95</span>/month</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-1"></div>
+                        <div class="col-11">
+                            <div class="float-right">
+                                <a href="#" class="btn btn-primary buybtn" id="3">Choose Pro Monthly</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="row bk_red discount" id="discountshare" style="margin: 0px;">
+        <div class="section section-full bk-red discount">
+            <div class="container" style="text-align: center;">
+            <h2>Friends don't let friends pay retail!</h2>
+            <p>
+                Share this link with all you friends so they can save too! <a id="sharelinkref" style="font-size: 1.15rem" href=""><span id="sharelink"></span></a>
+            </p>
+            </div>
+        </div>
+    </div>
+
+
+<footer class="footer bk-black" id="footer">
+</footer>
+<script>
+$(document).ready(function(){
+
+    $('.nav-link, .navbar-brand, .internal-link').click(function() {
+        var sectionTo = $(this).attr('href');
+        $('html, body').animate({
+            scrollTop: $(sectionTo).offset().top
+        }, 500);
+    });
+
+});
+
+$('#topnav').load('topmenu.html');
+$('#footer').load('footer.html');
+$('#discountbadge').load('badge.html');
+
+</script>
+
+
+</body>
+</html>

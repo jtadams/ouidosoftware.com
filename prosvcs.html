@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ouido Software</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <!-- ouido js -->
+    <script src="js/ambassadors.js"></script>
+    <script src="js/codemanager.js"></script>
+    <link rel="stylesheet" href="css/ouidocustom.css">
+
+</head>
+<body class="bk-white">
+<div class="ouidocontainer" id="topnav">
+</div>
+
+<!-- placeholder for discount code if passed in -->
+<div style="display: none">
+    <span class="discountcode" id="discountcode"></span>
+</div>
+
+<div id="discountbadge"></div>
+
+<div class="section section-full bk-white section-subpage ">
+    <h4>Ouido Software</h4>
+    <h1>Professional Services</h1>
+
+    <div class="row" id="prosvcs">
+        <div class="section section-right bk-purple">
+            <div style="margin:auto;">
+                <img src="images/coputer1.png" style="width: 35vw;">
+            </div>
+        </div>
+        <div class="section section-right bk-white">
+            <h4>Ouido's Professional Services is here to help</h4>
+            <p>
+                Want to get the most of your Ouido Subscription? Our Professional Services Team is here to healp.
+                Typical engagements last one week during which our implementation experts will:
+            </p>
+            <ul>
+                <li>Learn Your process for all of your different deal types</li>
+                <li>Build custom templates to handle all of those deal types</li>
+                <li>Train your (or your admin) how to tweak the templates as things change</li>
+                <li>Train you and your staff on using Ouido, and getting the most from your subscription</li>
+            </ul>
+            <h4>The Fast & Easy Way to Customize Your Process</h4>
+            <div class="cta cta-red refbtn newtab" href="mailto:sales@ouidosoftware.com?subject=Professional Services Inquiry">Contact Professional Services</div>
+        </div>
+    </div>
+
+</div>
+
+<footer class="footer bk-black" id="footer">
+</footer>
+<script>
+    $(document).ready(function(){
+        $('.response').hide();
+
+        $('.solution-card').click(function(){
+
+            let q = $(this).text();
+            $('#question').text(q);
+
+            $('.response').hide();
+            let type = $(this).attr('id');
+            $('#' + type + '-response').show();
+        });
+
+        $('#topnav').load('topmenu.html');
+        $('#footer').load('footer.html');
+        $('#discountbadge').load('badge.html');
+
+
+    });
+
+</script>
+
+
+</body>
+</html>
